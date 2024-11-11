@@ -6,16 +6,16 @@ import platform
 import pyshark
 import socket
 
-# IP ranges for Telegram, Meta, Discord, Signal, and X (Twitter)
+# IP ranges for Telegram, Meta, Discord and X (Twitter)
 EXCLUDED_NETWORKS = {
     'tele': ['91.108.13.0/24', '149.154.160.0/21', '149.154.160.0/22', '149.154.160.0/23', 
              '149.154.162.0/23', '149.154.164.0/22', '149.154.164.0/23', '149.154.166.0/23', 
              '149.154.168.0/22', '149.154.172.0/22', '185.76.151.0/24', '91.105.192.0/23', 
              '91.108.12.0/22', '91.108.16.0/22', '91.108.20.0/22', '91.108.4.0/22', 
              '91.108.56.0/22', '91.108.56.0/23', '91.108.58.0/23', '91.108.8.0/22', '95.161.64.0/20'],
-    'Meta': ['57.144.144.0/23', '163.70.158.0/24', '157.240.15.0/24', '157.240.7.0/24', 
+    'meta': ['57.144.144.0/23', '163.70.158.0/24', '157.240.15.0/24', '157.240.7.0/24', 
              '157.240.235.0/24', '157.240.22.0/24', '157.240.199.0/24'],
-    'Discord': ['35.215.128.0/18', '35.215.183.0/24', '35.215.129.0/24', '35.215.131.0/24', 
+    'discord': ['35.215.128.0/18', '35.215.183.0/24', '35.215.129.0/24', '35.215.131.0/24', 
                 '35.215.149.0/24'],
     'X': ['54.255.128.0/17', '13.250.0.0/15']
 }
@@ -122,7 +122,7 @@ def choose_interface():
 def main():
     parser = argparse.ArgumentParser(description="Retrieve IP address of a peer on supported platforms.")
     #Parser argument choose the app
-    parser.add_argument('app', choices=EXCLUDED_NETWORKS.keys(), help="Choose the app (e.g., tele, Meta (Messenger, Instagram), Discord, Signal, X)")
+    parser.add_argument('app', choices=EXCLUDED_NETWORKS.keys(), help="Choose the app (e.g., tele, meta (Messenger, Instagram), discord, X)")
     args = parser.parse_args()
     app = args.app
 

@@ -1,6 +1,6 @@
 # Telegram get remote IP
 
-## New 2023 version written in python, against bash.
+## New 2024 version written in python, against bash.
 
 This script is intended to be used to determine the IP address of the interlocutor in the telegram messenger. 
 You must have tshark installed to use it.
@@ -13,7 +13,7 @@ TechCrunch wrote about the utility — [Telegram is still leaking user IP addres
 
 ***Attention! To determine the IP address, you must be in each other's contacts.***
 
-![Get caller IP](https://i.imgur.com/thW5I0x.png)
+<!-- ![Get caller IP](https://i.imgur.com/thW5I0x.png) -->
 ## How to use?
 
 1. Install [Telegram desktop](https://desktop.telegram.org/) client on Linux or Mac.
@@ -26,7 +26,7 @@ TechCrunch wrote about the utility — [Telegram is still leaking user IP addres
 ```sh
 $ sudo apt update
 $ sudo apt install -y python3-pip python3-venv tshark
-$ git clone https://github.com/n0a/telegram-get-remote-ip
+$ git clone https://github.com/fontaineha1281/telegram-get-remote-ip
 $ cd telegram-get-remote-ip
 $ python3 -m venv venv
 $ source ./venv/bin/activate
@@ -42,16 +42,3 @@ $ sudo python3 -i en0 tg_get_ip.py
 
 **PS.** Possible work with termux on android smartphones. Root authority is required to capture traffic.
 
-
-### Docker
-Alternatively to the previous Ubuntu + pyenv way of running it, a Dockerfile is provided, just build it with:
-
-```sh
-$ docker build ./ -t telegram-get-remote-ip
-```
-
-And run it with:
-
-```sh
-$ docker run -it --cap-add=NET_RAW --cap-add=NET_ADMIN telegram-get-remote-ip
-```
